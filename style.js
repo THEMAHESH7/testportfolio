@@ -43,4 +43,11 @@ document.addEventListener('DOMContentLoaded', function() {
         alert('Form submitted successfully!');
         contactForm.reset();
     });
+
+    // Responsive navigation menu toggle
+    const navToggle = document.getElementById('nav-toggle');
+    const navMenu = document.querySelector('nav ul');
+    navToggle.addEventListener('click', function() {
+        navMenu.classList.toggle('active');
+    });
 });
