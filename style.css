@@ -40,10 +40,17 @@ header {
     color: #fff;
     font-size: 18px;
     transition: color 0.3s;
+    display: flex;
+    align-items: center;
 }
 
 .nav-links a:hover {
     color: #58a6ff;
+}
+
+.nav-links a i {
+    margin-right: 10px;
+    font-size: 20px;
 }
 
 section {
@@ -78,3 +85,6 @@ section {
 html {
     scroll-behavior: smooth;
 }
+
+/* Import FontAwesome for Icons */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css');
