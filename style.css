@@ -8,7 +8,7 @@ body {
 
 header {
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
     padding: 20px;
     background: #161b22;
@@ -24,15 +24,13 @@ header {
 .nav-links {
     list-style: none;
     display: flex;
-    flex-direction: column;
-    position: fixed;
-    left: 10px;
-    top: 50%;
-    transform: translateY(-50%);
+    flex-direction: row;
+    justify-content: center;
+    gap: 30px;
 }
 
 .nav-links li {
-    margin: 15px 0;
+    display: inline;
 }
 
 .nav-links a {
