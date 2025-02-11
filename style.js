@@ -9,7 +9,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 // Typing Effect
-const typingElement = document.querySelector('.typing');
+const typingText = document.querySelector('.typing-text');
 const words = ["Developer", "Designer", "Freelancer"];
 let wordIndex = 0;
 let charIndex = 0;
@@ -19,7 +19,7 @@ function type() {
     let currentWord = words[wordIndex];
     let displayedText = isDeleting ? currentWord.substring(0, charIndex--) : currentWord.substring(0, charIndex++);
 
-    typingElement.textContent = displayedText;
+    typingText.textContent = displayedText;
 
     if (!isDeleting && charIndex === currentWord.length) {
         isDeleting = true;
