@@ -4,22 +4,27 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-color: #f4f4f4;
-    color: #333;
     scroll-behavior: smooth;
+    background: linear-gradient(45deg, #1a1a2e, #16213e, #0f3460, #e94560);
+    background-size: 400% 400%;
+    animation: backgroundTransition 10s infinite ease-in-out;
+    color: white;
 }
 
-h2 {
-    text-align: center;
-    margin: 50px 0;
+/* Background Animation */
+@keyframes backgroundTransition {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
 
-/* Navigation */
+/* Navbar */
 #navbar {
     display: flex;
     justify-content: space-between;
-    padding: 20px;
-    background: rgba(0, 0, 0, 0.8);
+    align-items: center;
+    padding: 15px 5%;
+    background: rgba(0, 0, 0, 0.9);
     color: white;
     position: fixed;
     width: 100%;
@@ -28,8 +33,9 @@ h2 {
 }
 
 .logo {
-    font-size: 24px;
+    font-size: 22px;
     font-weight: bold;
+    letter-spacing: 2px;
 }
 
 .nav-links {
@@ -41,11 +47,12 @@ h2 {
 .nav-links li a {
     text-decoration: none;
     color: white;
-    transition: color 0.3s ease;
+    transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .nav-links li a:hover {
     color: #ff9800;
+    transform: scale(1.1);
 }
 
 /* Hero Section */
@@ -70,16 +77,17 @@ h2 {
 .btn {
     display: inline-block;
     margin-top: 20px;
-    padding: 10px 20px;
+    padding: 12px 24px;
     background: #ff9800;
     color: white;
     text-decoration: none;
-    border-radius: 5px;
-    transition: background 0.3s ease;
+    border-radius: 8px;
+    transition: background 0.3s ease, transform 0.3s ease;
 }
 
 .btn:hover {
     background: #e68900;
+    transform: scale(1.1);
 }
 
 /* About */
@@ -93,6 +101,12 @@ h2 {
 .about-content img {
     width: 150px;
     border-radius: 50%;
+    border: 3px solid #ff9800;
+    transition: transform 0.3s ease;
+}
+
+.about-content img:hover {
+    transform: scale(1.1);
 }
 
 /* Projects */
@@ -105,15 +119,16 @@ h2 {
 
 .project-card {
     padding: 20px;
-    background: white;
-    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
     text-align: center;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, background 0.3s ease;
 }
 
 .project-card:hover {
     transform: translateY(-10px);
+    background: rgba(255, 255, 255, 0.2);
 }
 
 /* Contact */
@@ -126,12 +141,11 @@ h2 {
 
 .contact input, .contact textarea {
     width: 80%;
-    padding: 10px;
-    border: 1px solid #ccc;
+    padding: 12px;
+    border: none;
     border-radius: 5px;
 }
 
-/* Footer */
 footer {
     text-align: center;
     padding: 20px;
