@@ -1,36 +1,14 @@
-// Smooth Scroll
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
+document.addEventListener("DOMContentLoaded", function () {
+    const navLinks = document.querySelectorAll(".nav-links a");
+    navLinks.forEach(link => {
+        link.addEventListener("click", function () {
+            navLinks.forEach(l => l.classList.remove("active"));
+            this.classList.add("active");
         });
     });
+    
+    const downloadBtn = document.querySelector(".download-btn");
+    downloadBtn.addEventListener("click", function () {
+        alert("Downloading CV...");
+    });
 });
-
-// Typing Effect
-const typingText = document.querySelector('.typing-text');
-const words = ["Developer", "Designer", "Freelancer"];
-let wordIndex = 0;
-let charIndex = 0;
-let isDeleting = false;
-
-function type() {
-    let currentWord = words[wordIndex];
-    let displayedText = isDeleting ? currentWord.substring(0, charIndex--) : currentWord.substring(0, charIndex++);
-
-    typingText.textContent = displayedText;
-
-    if (!isDeleting && charIndex === currentWord.length) {
-        isDeleting = true;
-        setTimeout(type, 1000);
-    } else if (isDeleting && charIndex === 0) {
-        isDeleting = false;
-        wordIndex = (wordIndex + 1) % words.length;
-        setTimeout(type, 500);
-    } else {
-        setTimeout(type, isDeleting ? 50 : 100);
-    }
-}
-
-document.addEventListener("DOMContentLoaded", type);
