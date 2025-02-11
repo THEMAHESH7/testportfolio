@@ -1,23 +1,27 @@
-document.addEventListener("DOMContentLoaded", function () {
-    const navLinks = document.querySelectorAll(".nav-links a");
+document.addEventListener("DOMContentLoaded", () => {
+    // Typing effect
+    const text = "Web Developer | AI Enthusiast | Tech Explorer";
+    let index = 0;
+    function type() {
+        document.querySelector(".typing").textContent = text.substring(0, index++);
+        if (index <= text.length) {
+            setTimeout(type, 100);
+        }
+    }
+    type();
 
-    navLinks.forEach(link => {
+    // Smooth Scroll
+    document.querySelectorAll(".nav-links a").forEach(link => {
         link.addEventListener("click", function (event) {
-            event.preventDefault(); // Prevent default jumping behavior
-            
-            navLinks.forEach(l => l.classList.remove("active"));
-            this.classList.add("active");
-
-            // Smooth scrolling to section
-            const sectionId = this.getAttribute("href").substring(1);
-            document.getElementById(sectionId)?.scrollIntoView({ behavior: "smooth" });
+            event.preventDefault();
+            const target = document.querySelector(this.getAttribute("href"));
+            window.scrollTo({ top: target.offsetTop - 60, behavior: "smooth" });
         });
     });
 
-    const downloadBtn = document.querySelector(".download-btn");
-    if (downloadBtn) {
-        downloadBtn.addEventListener("click", function () {
-            alert("Downloading CV...");
-        });
-    }
+    // Form Validation
+    document.getElementById("contactForm").addEventListener("submit", function (event) {
+        event.preventDefault();
+        alert("Message Sent!");
+    });
 });
