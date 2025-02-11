@@ -41,11 +41,12 @@ body {
 .nav-links {
     list-style: none;
     display: flex;
-    gap: 50px;
+    gap: 20px;
 }
 
 .nav-links li a {
     text-decoration: none;
+    margin-right: 20px;
     color: white;
     transition: color 0.3s ease, transform 0.3s ease;
 }
