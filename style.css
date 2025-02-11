@@ -1,139 +1,150 @@
-html {
-    scroll-behavior: smooth;
-}
-
-.theme-switch {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-}
-
-.theme-switch input {
-    display: none;
-}
-
-.theme-switch span {
-    cursor: pointer;
-    padding: 5px;
-    background: #ccc;
-    border-radius: 5px;
-}
-
-[data-theme="dark"] {
-    background-color: #121212;
-    color: #ffffff;
-}
-
-[data-theme="dark"] .theme-switch span {
-    background: #333;
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
 }
 
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
-    color: #333;
+    background: #121212;
+    color: white;
+    scroll-behavior: smooth;
 }
 
+/* Navigation */
 header {
-    background-color: #333;
-    color: #fff;
-    padding: 10px 0;
-    text-align: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 10px 20px;
+    z-index: 1000;
 }
 
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 20px;
 }
 
-nav ul {
+.nav-links {
     list-style: none;
-    padding: 0;
     display: flex;
-    gap: 10px;
 }
 
-nav ul li {
-    margin: 0;
+.nav-links li {
+    margin: 0 15px;
 }
 
-nav ul li a {
-    color: #fff;
+.nav-links a {
     text-decoration: none;
+    color: white;
+    transition: color 0.3s ease-in-out;
 }
 
-#nav-toggle {
-    display: none;
-    background: none;
-    border: none;
-    color: #fff;
-    font-size: 24px;
-    cursor: pointer;
+.nav-links a:hover {
+    color: #00aaff;
 }
 
-.container {
-    padding: 20px;
-}
-
-section {
-    margin-bottom: 20px;
-}
-
-.project-list {
+/* Hero Section */
+.hero {
     display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    background: linear-gradient(135deg, #00aaff, #0044ff);
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+}
+
+.hero .btn {
+    background: white;
+    color: black;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.hero .btn:hover {
+    background: #00aaff;
+    color: white;
+}
+
+/* About Section */
+#about {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+/* Projects */
+#projects {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.project-container {
+    display: flex;
+    justify-content: center;
     flex-wrap: wrap;
 }
 
-.project-item {
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 5px;
+.project {
+    position: relative;
+    margin: 15px;
+}
+
+.project img {
+    width: 300px;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.project:hover img {
+    transform: scale(1.1);
+}
+
+/* Contact */
+#contact {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+form input, form textarea {
+    width: 300px;
     margin: 10px;
     padding: 10px;
-    width: calc(33.333% - 20px);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border: none;
+    border-radius: 5px;
 }
 
-.project-item h3 {
-    margin-top: 0;
+form button {
+    padding: 10px 20px;
+    border: none;
+    background: #00aaff;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
 }
 
+form button:hover {
+    background: white;
+    color: black;
+}
+
+/* Footer */
 footer {
-    background-color: #333;
-    color: #fff;
     text-align: center;
-    padding: 10px 0;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
-}
-
-/* Responsive styles */
-@media (max-width: 768px) {
-    nav ul {
-        flex-direction: column;
-        display: none;
-    }
-
-    nav ul.active {
-        display: flex;
-    }
-
-    #nav-toggle {
-        display: block;
-    }
-
-    .project-item {
-        width: calc(50% - 20px);
-    }
-}
-
-@media (max-width: 480px) {
-    .project-item {
-        width: 100%;
-    }
+    padding: 20px;
+    background: #000;
 }

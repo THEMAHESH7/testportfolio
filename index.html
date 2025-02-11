@@ -1,68 +1,77 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Personal Portfolio</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="style.js" defer></script>
+    <title>Portfolio | Your Name</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
 </head>
 <body>
+
+    <!-- Navigation -->
     <header>
-        <h1>My Portfolio</h1>
         <nav>
-            <button id="nav-toggle" aria-label="Toggle navigation menu">☰</button>
-            <ul>
+            <h2 class="logo">Portfolio</h2>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#projects">Projects</a></li>
-                <li><a href="#skills">Skills</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
-            <button id="theme-toggle">Toggle Theme</button>
         </nav>
-        <div class="theme-switch">
-            <label>
-                <input type="checkbox">
-                <span>Dark Mode</span>
-            </label>
-        </div>
     </header>
-    <div class="container">
-        <section id="about">
-            <h2>About Me</h2>
-            <p>Welcome to my portfolio. I am a web developer with a passion for creating beautiful and functional websites.</p>
-        </section>
-        <section id="projects">
-            <h2>Projects</h2>
-            <div class="project-list">
-                <!-- Project items will be dynamically added here -->
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Hi, I'm <span class="name">Your Name</span></h1>
+            <p>A passionate <span class="typing"></span></p>
+            <a href="#projects" class="btn">View Projects</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2>About Me</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. I create amazing websites.</p>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <h2>My Projects</h2>
+        <div class="project-container">
+            <div class="project">
+                <img src="project1.jpg" alt="Project 1">
+                <div class="overlay">
+                    <h3>Project 1</h3>
+                    <p>Project description.</p>
+                </div>
             </div>
-        </section>
-        <section id="skills">
-            <h2>Skills</h2>
-            <ul>
-                <li>HTML</li>
-                <li>CSS</li>
-                <li>JavaScript</li>
-                <li>React</li>
-                <li>Node.js</li>
-            </ul>
-        </section>
-        <section id="contact">
-            <h2>Contact Me</h2>
-            <form id="contact-form">
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-                <label for="message">Message:</label>
-                <textarea id="message" name="message" required></textarea>
-                <button type="submit">Send</button>
-            </form>
-        </section>
-    </div>
+            <div class="project">
+                <img src="project2.jpg" alt="Project 2">
+                <div class="overlay">
+                    <h3>Project 2</h3>
+                    <p>Project description.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <form id="contactForm">
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
     <footer>
-        <p>&copy; 2023 My Portfolio</p>
+        <p>&copy; 2025 Your Name. All Rights Reserved.</p>
     </footer>
+
 </body>
 </html>
